@@ -1,6 +1,7 @@
 {
   "name": "tts-cpp",
   "version-date": "2026-08-12",
+  "port-version": 1,
   "description": "Text-to-speech in pure C++/ggml: Resemble Chatterbox (Turbo + Multilingual), Supertonic, Fun-CosyVoice3, Parler-TTS, Audio8, and LavaSR speech enhancement. Sourced from tetherto/qvac-ext-lib-whisper.cpp (engines/tts). This release advances the pin to 0943f759 (QVAC-22775) and enables CosyVoice3 GPU execution on Metal (macOS / iOS): the engine's validated-backend allowlist widens from OpenCL/Adreno-only to Metal + OpenCL, guarded by per-stage GPU parity tests (flow / llm against their PyTorch-reference gates; hift with the f0 trajectory pinned across backends because SineGen2 integrates it into sine phases). The public API shape is unchanged: the existing n_gpu_layers option now engages Metal on Apple hosts, and Vulkan hosts continue to fall back to CPU. The ggml-speech floor stays at 2026-08-07.",
   "homepage": "https://github.com/tetherto/qvac-ext-lib-whisper.cpp/tree/master/engines/tts",
   "license": "MIT",

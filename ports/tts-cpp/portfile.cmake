@@ -2,8 +2,9 @@
 # in pure C++/ggml, from the engines/tts subfolder of qvac-ext-lib-whisper.cpp;
 # consumes the ggml-speech port.
 #
-# Pinned at 0943f759 (QVAC-22775): CosyVoice3 Metal GPU on darwin/ios via the
-# widened validated-backend allowlist, with per-stage GPU parity gates.
+# Pinned at 8f6575d7 (QVAC-22775): CosyVoice3 Metal GPU on darwin/ios via the
+# Metal-or-OpenCL selection requirement, with per-stage GPU parity gates and
+# both review rounds applied.
 # PRE-FLIGHT PIN: sourced from the mexxik fork until ext-lib PR merges to
 # master; repoint REPO/REF to the tetherto master merge commit before the
 # real registry PR. The ggml-speech floor stays at 2026-08-07.
@@ -14,8 +15,8 @@ set(VCPKG_BUILD_TYPE release)
 vcpkg_from_github(
     OUT_SOURCE_PATH WHISPER_CPP_SRC
     REPO mexxik/qvac-ext-lib-whisper.cpp
-    REF 0943f75900e92ce32c9bf62e7d0fc6b4f95eb161
-    SHA512 00d726e8de2d7c892bdcf8d6f3b44459731d319a4a278de462d8fe17eb8121d9a04dd2a3cf7447d8d11beb234e5003e4aec2bb02b84b164052819df866a3d53d
+    REF 8f6575d77c2b62492e17037ba08227d05d4b8422
+    SHA512 d8c862e8832724b666c8871198d0d6ff502d0fb677daac9af82c1a8254e2f248007fc0f0b3a3c89840c8c4253806917fbe5a20bc49e24c196eca1abefd742f3e
     HEAD_REF feat/QVAC-22775-cosyvoice-metal
 )
 
