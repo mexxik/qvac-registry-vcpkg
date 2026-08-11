@@ -2,19 +2,21 @@
 # in pure C++/ggml, from the engines/tts subfolder of qvac-ext-lib-whisper.cpp;
 # consumes the ggml-speech port.
 #
-# Pinned at master ca075380. This keeps the 2026-08-10 emotion / pace controls
-# and Supertonic vocoder backward, and adds Audio8 desktop Vulkan execution.
-# The ggml-speech floor stays at 2026-08-07.
+# Pinned at 0943f759 (QVAC-22775): CosyVoice3 Metal GPU on darwin/ios via the
+# widened validated-backend allowlist, with per-stage GPU parity gates.
+# PRE-FLIGHT PIN: sourced from the mexxik fork until ext-lib PR merges to
+# master; repoint REPO/REF to the tetherto master merge commit before the
+# real registry PR. The ggml-speech floor stays at 2026-08-07.
 
 set(VCPKG_POLICY_MISMATCHED_NUMBER_OF_BINARIES enabled)
 set(VCPKG_BUILD_TYPE release)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH WHISPER_CPP_SRC
-    REPO tetherto/qvac-ext-lib-whisper.cpp
-    REF ca075380c1fb775d3441b86a81eb3dd65f1352c3
-    SHA512 a43b149a7385367cabbcd0078546def726ba63586797c2ffb8fac5d56358714ecc17dac3cbdd94c5a7bc2c3ef053962e55683a71796cf6a0d473b003b7be6447
-    HEAD_REF master
+    REPO mexxik/qvac-ext-lib-whisper.cpp
+    REF 0943f75900e92ce32c9bf62e7d0fc6b4f95eb161
+    SHA512 00d726e8de2d7c892bdcf8d6f3b44459731d319a4a278de462d8fe17eb8121d9a04dd2a3cf7447d8d11beb234e5003e4aec2bb02b84b164052819df866a3d53d
+    HEAD_REF feat/QVAC-22775-cosyvoice-metal
 )
 
 set(SOURCE_PATH "${WHISPER_CPP_SRC}/engines/tts")
