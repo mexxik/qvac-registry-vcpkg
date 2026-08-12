@@ -13,9 +13,9 @@ set(VCPKG_BUILD_TYPE release)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH WHISPER_CPP_SRC
-    REPO tetherto/qvac-ext-lib-whisper.cpp
-    REF 21f12102e26ced099809802039109caca3f09045
-    SHA512 51cc29225d0d2f219df77ed7396aaf34df61c410bf7d8ee5a1c0c2bc577df580ccf3c60b189bca1b3b6451389217b14165c7d1d9b5b42a2e08ba7222884c8500
+    REPO mexxik/qvac-ext-lib-whisper.cpp
+    REF 5b44888ccc22452f8c72559b45d482b66e3c41c0
+    SHA512 5aa1a43730edcad7d2a7ade5a74a6130401f02aa502eab76d96013dedbdce53cd0d42dae8f4ec52e684654eb2337f5485bdcfc8f59fc2a4654a1ea3239e28cb9
     HEAD_REF master
 )
 
