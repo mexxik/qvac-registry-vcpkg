@@ -75,6 +75,7 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
         metal   GGML_METAL
         vulkan  GGML_VULKAN
         opencl  GGML_OPENCL
+        cuda    GGML_CUDA
         coreml  PARAKEET_COREML
 )
 

@@ -1,7 +1,7 @@
 {
   "name": "ggml-speech",
-  "version-date": "2026-08-07",
-  "description": "Speech-stack ggml flavour (tetherto/qvac-ext-ggml@speech), consumed by the whisper-cpp, parakeet-cpp, tts-cpp and audiogen-cpp ports. This pin (PRs #52 and #53) sizes the Vulkan matmul src0 binding from nb[] so a strided src0 view no longer reads past the end of its descriptor, defaults prefer_host_memory on unified-memory adapters, and on OpenCL adds the ACE-Step snake and col2im_1d kernels together with a much faster im2col on the default convolution path. CPU output is unchanged.",
+  "version-date": "2026-08-20",
+  "description": "Speech-stack ggml flavour (tetherto/qvac-ext-ggml@speech), consumed by the whisper-cpp, parakeet-cpp, tts-cpp and audiogen-cpp ports. This pin (PRs #59 and #60) fixes two ggml-cuda kernels the TTS engines depend on: im2col and pad mapped an output axis one-to-one onto a CUDA grid dimension capped at 65535, so a long audio time axis aborted the launch, and conv_transpose_1d walked the whole input for every output element instead of the kernel taps reaching it, which made a vocoder slower on CUDA than on CPU. CPU, Metal, Vulkan and OpenCL output is unchanged.",
   "homepage": "https://github.com/tetherto/qvac-ext-ggml/tree/speech",
   "license": "MIT",
   "dependencies": [
