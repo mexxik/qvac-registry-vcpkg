@@ -1,8 +1,7 @@
 {
   "name": "speech-cpp",
-  "version-date": "2026-09-16",
-  "port-version": 1,
-  "description": "Umbrella port over the QVAC speech stack with one shared ggml dependency and selectable whisper, parakeet, TTS, and audiogen engines. Revision #1 of 2026-09-16 keeps the source pin (2878f513, which already carries qvac-fabric-speech.cpp #254, the Apple Core ML sidecar for the Audio8 codec synthesis stack behind TTS_CPP_COREML) and widens the coreml feature to every engine with a sidecar (PARAKEET_COREML, TTS_CPP_COREML, AUDIOGEN_COREML) instead of implying parakeet. No ggml-speech change.",
+  "version-date": "2026-09-18",
+  "description": "Umbrella port over the QVAC speech stack with one shared ggml dependency and selectable whisper, parakeet, TTS, and audiogen engines. 2026-09-18 moves the source pin to 683c67e0 (qvac-fabric-speech.cpp #255, #256, #260, #247, #264): MiniMax-Music3 1.56x faster on Strix Halo (RVQ depth-decoder K/V cache, 20 flow steps by default, depth decoder quantized with the variant), the CosyVoice3 bf16 flow tier with tier parity gates, the Audio8 decode-loop cut, and the Parakeet Unified RNN-T encoder Core ML sidecar (behind PARAKEET_COREML, already covered by the coreml feature). Existing GGUFs keep working; the quantized-depth MiniMax tier needs re-converted synth files. No ggml-speech change: the port already builds ggml with tinyBLAS where #260 now defaults it on for bundled builds.",
   "homepage": "https://github.com/tetherto/qvac-fabric-speech.cpp",
   "license": "MIT",
   "dependencies": [
